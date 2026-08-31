@@ -1,5 +1,7 @@
 package src.model;
 
-public class Client {
-    
-}
+public record Client(
+    Long id,
+    String name,
+    String email
+){}

@@ -1,5 +1,7 @@
 package src.model;
 
-public class Product{
-
-}
+public record Product(
+    Long id,
+    String name,
+    Double price
+){}

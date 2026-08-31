@@ -1,5 +1,7 @@
 package src.model;
 
-public class ItemOrder {
-    
-}
+public record ItemOrder(
+    Product Product,
+    Integer Quantity
+
+){}
