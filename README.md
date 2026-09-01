@@ -301,6 +301,3 @@ Durante o desenvolvimento deste projeto foram praticados:
 * Expor funcionalidades através de APIs REST
 
 ```
-
-Você pode complementar com uma seção de **"Desafios Implementados"** para destacar no GitHub os tópicos de Stream API que praticou, o que costuma chamar atenção de recrutadores e entrevistadores Java.
-```
