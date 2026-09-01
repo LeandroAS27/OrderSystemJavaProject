@@ -3,17 +3,29 @@ import java.util.Comparator;
 import java.util.List;
 import src.model.Order;
 import java.util.Optional;
+import src.functional.DiscountCalculator;
+public class OrderService implements DiscountCalculator {
 
-public class OrderService {
     private List<Order> orders;
 
     public OrderService(List<Order> orders){
         this.orders = orders;
     }
 
-    //melhorar o retorno da lista de pedidos pagos
+    @Override
+    public double apply(double value) {
+        return value * 0.9;
+    }
+
     public List<Order> listPaidOrders(){
-        return orders.stream().filter(order -> order.isPaid()).toList();
+        if(orders.stream().filter(order -> order.isPaid()).findFirst().isPresent()){
+            List<Order> paidOrders = orders.stream().filter(order -> order.isPaid()).toList();
+            return paidOrders;
+        }else{
+            List<Order> paidOrders = orders.stream().filter(order -> !order.isPaid()).toList();
+            return paidOrders;
+        }
+        
     }
 
     public Optional<Order> searchForId(Long id){
